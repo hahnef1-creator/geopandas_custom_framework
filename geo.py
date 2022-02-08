@@ -169,7 +169,7 @@ def custom_replicate(input_gdb,output_gdb):
     for name in input_data:
         arcpy.env.workspace = input_gdb
         arcpy.env.OverwriteOutput= True
-        if name in output_names_in_gdb:
+        if name.split(".")[-1] in output_names_in_gdb:
             pass
         else:
             describe = arcpy.Describe(name)
